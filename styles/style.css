@@ -117,6 +117,19 @@ header nav ul li a:hover, header nav ul li a:focus {
   justify-content: center;
   align-items: center;
 }
+.modal button {
+  background: var(--tertiary-color);
+  color: #fff;
+  border: 1px solid var(--tertiary-color);
+}
+.modal button.cancel {
+  background: #888;
+  border: 1px solid #888;
+}
+.modal button:hover, .modal button:focus {
+  background: transparent;
+  color: #000;
+}
 
 section.banner {
   height: 100vh;

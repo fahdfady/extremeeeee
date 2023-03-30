@@ -27,8 +27,8 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/aSqeWUuQSlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn cancel" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn">Save changes</button>
                 </div>
 
             </div>
@@ -62,7 +62,17 @@
                         </div>
 
                         <div class="col-12 videos wow animate__fadeInUp" data-wow-duration=".5s">
-                            <div class="carousel"></div>
+                            <div class="carousel">
+                                <button class="carousel__button previous" id="previous"> <i class="fa-solid fa-chevron-left"></i> </button>
+                                <div class="carousel__images">
+                                    <img class="active" src="assets/service-img2.jpg" alt="" loading="lazy" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                    <img src="assets/service-img2.jpg" alt="" loading="lazy" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                    <img src="assets/service-img2.jpg" alt="" loading="lazy" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                    <img src="assets/service-img2.jpg" alt="" loading="lazy" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                    <img src="assets/service-img2.jpg" alt="" loading="lazy" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                </div>
+                                <button class="carousel__button next" id="next"> <i class="fa-solid fa-chevron-right"></i> </button>
+                            </div>
                         </div>
                     </div>
 

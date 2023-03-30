@@ -159,6 +159,24 @@ header {
 	.modal-body {
 		@include centerAll();
 	}
+
+	button {
+		background: var(--tertiary-color);
+		color: #fff;
+		border: 1px solid var(--tertiary-color);
+
+		&.cancel {
+			background: #888;
+			border: 1px solid #888;
+
+		}
+
+		&:hover,
+		&:focus {
+			background: transparent;
+			color: #000;
+		}
+	}
 }
 
 section {
