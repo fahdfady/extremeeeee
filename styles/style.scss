@@ -152,31 +152,28 @@ header {
 }
 
 .modal {
+	color: #000;
+	text-align: center;
+	direction: rtl;
+
 	.modal-dialog {
 		min-width: 70%;
 	}
 
+	.modal-header .btn-close {
+		margin-inline-end: -.5rem;
+		margin-inline-start: auto
+	}
+
 	.modal-body {
 		@include centerAll();
-	}
 
-	button {
-		background: var(--tertiary-color);
-		color: #fff;
-		border: 1px solid var(--tertiary-color);
-
-		&.cancel {
-			background: #888;
-			border: 1px solid #888;
-
-		}
-
-		&:hover,
-		&:focus {
-			background: transparent;
-			color: #000;
+		p {
+			width: 520px;
+			padding: 2px 8px;
 		}
 	}
+
 }
 
 section {

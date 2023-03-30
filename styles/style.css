@@ -109,26 +109,28 @@ header nav ul li a:hover, header nav ul li a:focus {
   box-shadow: inset 300px 0 0 0 var(--secondary-color);
 }
 
+.modal {
+  color: #000;
+  text-align: center;
+  direction: rtl;
+}
 .modal .modal-dialog {
   min-width: 70%;
+}
+.modal .modal-header .btn-close {
+  -webkit-margin-end: -0.5rem;
+          margin-inline-end: -0.5rem;
+  -webkit-margin-start: auto;
+          margin-inline-start: auto;
 }
 .modal .modal-body {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.modal button {
-  background: var(--tertiary-color);
-  color: #fff;
-  border: 1px solid var(--tertiary-color);
-}
-.modal button.cancel {
-  background: #888;
-  border: 1px solid #888;
-}
-.modal button:hover, .modal button:focus {
-  background: transparent;
-  color: #000;
+.modal .modal-body p {
+  width: 520px;
+  padding: 2px 8px;
 }
 
 section.banner {
