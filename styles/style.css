@@ -110,18 +110,22 @@ header nav ul li a:hover, header nav ul li a:focus {
 }
 
 .modal {
-  color: #000;
   text-align: center;
   direction: rtl;
 }
 .modal .modal-dialog {
   min-width: 70%;
 }
+.modal .modal-content {
+  background: #181818;
+  color: #fff;
+}
 .modal .modal-header .btn-close {
   -webkit-margin-end: -0.5rem;
           margin-inline-end: -0.5rem;
   -webkit-margin-start: auto;
           margin-inline-start: auto;
+  color: #fff;
 }
 .modal .modal-body {
   display: flex;

@@ -152,17 +152,25 @@ header {
 }
 
 .modal {
-	color: #000;
+	// background: #111;
+	// color: #fff;
 	text-align: center;
 	direction: rtl;
 
 	.modal-dialog {
 		min-width: 70%;
+
+	}
+
+	.modal-content {
+		background: #181818;
+		color: #fff;
 	}
 
 	.modal-header .btn-close {
 		margin-inline-end: -.5rem;
-		margin-inline-start: auto
+		margin-inline-start: auto;
+		color:#fff;
 	}
 
 	.modal-body {
