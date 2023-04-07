@@ -62,6 +62,7 @@ header nav.active {
   background: #111;
 }
 header nav .navbar-container {
+  width: 100%;
   padding: 0 22px;
   display: flex;
   align-items: center;
@@ -71,7 +72,29 @@ header nav .navbar-container {
 header nav .logo img {
   width: 200px;
 }
+header nav .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+  background: black;
+  z-index: -1;
+}
+header nav .hamburger-button {
+  display: none;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-size: 28px;
+}
 header nav ul {
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
@@ -89,7 +112,7 @@ header nav ul li a + * {
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
-  bottom: 1000000000000000000000;
+  bottom: 999999999999999;
   left: 0;
   right: 0;
   background: #222;
@@ -131,6 +154,7 @@ header nav ul li a:hover, header nav ul li a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .modal .modal-body p {
   width: 520px;
@@ -504,71 +528,6 @@ form button.submit:hover, form button.submit:focus {
   transition-duration: 0.2s;
 }
 
-#t-1:checked ~ .dots label[for=t-1],
-#t-2:checked ~ .dots label[for=t-2],
-#t-3:checked ~ .dots label[for=t-3],
-#t-4:checked ~ .dots label[for=t-4],
-#t-5:checked ~ .dots label[for=t-5] {
-  transform: scale(2);
-  background-color: #fff;
-  box-shadow: 0px 0px 0px 3px rgba(221, 221, 221, 0.1411764706);
-}
-
-#t-1:checked ~ .dots label[for=t-2],
-#t-2:checked ~ .dots label[for=t-1],
-#t-2:checked ~ .dots label[for=t-3],
-#t-3:checked ~ .dots label[for=t-2],
-#t-3:checked ~ .dots label[for=t-4],
-#t-4:checked ~ .dots label[for=t-3],
-#t-4:checked ~ .dots label[for=t-5],
-#t-5:checked ~ .dots label[for=t-4] {
-  transform: scale(1.5);
-}
-
-#t-1:checked ~ .testimonials label[for=t-3],
-#t-2:checked ~ .testimonials label[for=t-4],
-#t-3:checked ~ .testimonials label[for=t-5],
-#t-4:checked ~ .testimonials label[for=t-1],
-#t-5:checked ~ .testimonials label[for=t-2] {
-  transform: translate3d(600px, 0, -180px) rotateY(-25deg);
-  z-index: 2;
-}
-
-#t-1:checked ~ .testimonials label[for=t-2],
-#t-2:checked ~ .testimonials label[for=t-3],
-#t-3:checked ~ .testimonials label[for=t-4],
-#t-4:checked ~ .testimonials label[for=t-5],
-#t-5:checked ~ .testimonials label[for=t-1] {
-  transform: translate3d(300px, 0, -90px) rotateY(-15deg);
-  z-index: 3;
-}
-
-#t-2:checked ~ .testimonials label[for=t-1],
-#t-3:checked ~ .testimonials label[for=t-2],
-#t-4:checked ~ .testimonials label[for=t-3],
-#t-5:checked ~ .testimonials label[for=t-4],
-#t-1:checked ~ .testimonials label[for=t-5] {
-  transform: translate3d(-300px, 0, -90px) rotateY(15deg);
-  z-index: 3;
-}
-
-#t-3:checked ~ .testimonials label[for=t-1],
-#t-4:checked ~ .testimonials label[for=t-2],
-#t-5:checked ~ .testimonials label[for=t-3],
-#t-2:checked ~ .testimonials label[for=t-5],
-#t-1:checked ~ .testimonials label[for=t-4] {
-  transform: translate3d(-600px, 0, -180px) rotateY(25deg);
-}
-
-#t-1:checked ~ .testimonials label[for=t-1],
-#t-2:checked ~ .testimonials label[for=t-2],
-#t-3:checked ~ .testimonials label[for=t-3],
-#t-4:checked ~ .testimonials label[for=t-4],
-#t-5:checked ~ .testimonials label[for=t-4],
-#t-5:checked ~ .testimonials label[for=t-5] {
-  z-index: 4;
-}
-
 .nav-services {
   padding: 12px 20px;
   flex-direction: column;
@@ -636,4 +595,112 @@ form button.submit:hover, form button.submit:focus {
 }
 .nav-services .services-container .service:hover .service-info, .nav-services .services-container .service:focus .service-info {
   background: linear-gradient(180deg, rgba(193, 64, 118, 0.862745098) 0%, rgba(237, 43, 140, 0) 100%);
+}
+
+@media (max-width: 800px) {
+  header nav .navbar-container {
+    justify-content: space-between;
+  }
+  header nav .hamburger-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header nav ul {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -900px;
+    z-index: 9;
+    background-color: #3D0E61;
+    visibility: hidden;
+    margin: 0;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.2s all ease-in-out;
+  }
+  header nav ul.menu-open {
+    visibility: visible;
+    right: 0;
+  }
+  header nav ul li a {
+    font-size: 34px;
+    font-weight: 600;
+  }
+  header nav ul li a + .active {
+    bottom: 0 !important;
+    top: auto !important;
+  }
+  .modal .modal-body p {
+    width: 600px;
+    font-size: 15px;
+  }
+  .modal .modal-dialog {
+    min-width: 90%;
+  }
+  .carousel {
+    --carousel-item-width: 130px;
+    --carousel-item-height: 130px;
+  }
+  section.service-section .service-description {
+    font-size: 20px;
+  }
+  .nav-services .services-container {
+    gap: 6px;
+  }
+  .nav-services .services-container .service {
+    width: calc(33% - 6px);
+    gap: 14px;
+  }
+}
+@media (max-width: 600px) {
+  header nav ul li a + .active {
+    max-height: 450px;
+    bottom: 0 !important;
+    top: auto !important;
+    flex-wrap: nowrap;
+  }
+  .carousel {
+    --carousel-item-width: 90px;
+    --carousel-item-height: 90px;
+    --carousel-height: 260px;
+  }
+  section.banner .layer {
+    padding: 0px 4px;
+  }
+  section.banner .layer h1 {
+    font-size: 48px;
+  }
+  section.banner .layer p {
+    font-size: 14px;
+  }
+  section.service-section .service-description {
+    font-size: 15px;
+  }
+  .nav-services .services-container {
+    gap: 6px;
+    overflow: auto;
+  }
+  .nav-services .services-container .service {
+    width: 100%;
+    padding: 0 6px;
+    gap: 14px;
+  }
+  .nav-services .services-container .service .service-icon::before {
+    width: 65px;
+    height: 65px;
+  }
+  .nav-services .services-container .service i {
+    font-size: 40px;
+  }
+  .nav-services .services-container .service p {
+    font-size: 14px;
+    line-height: 1.2;
+  }
 }/*# sourceMappingURL=style.css.map */
