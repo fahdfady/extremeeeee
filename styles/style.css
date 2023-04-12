@@ -548,33 +548,27 @@ form button.submit:hover, form button.submit:focus {
   align-items: center;
   flex-direction: column;
   gap: 22px;
-}
-.nav-services .services-container .service .service-icon {
   position: relative;
 }
-.nav-services .services-container .service .service-icon::before {
-  content: " ";
-  display: block;
-  width: 90px;
-  height: 90px;
+.nav-services .services-container .service img {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 0px dotted var(--secondary-color);
-  border-radius: 100%;
-  transition: border-width 0.08s linear;
-  transform: translate(-50%, -50%);
-}
-.nav-services .services-container .service i {
-  font-size: 60px;
-  color: #612dbd;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  filter: brightness(0.8);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.2s all ease-in-out;
 }
 .nav-services .services-container .service h2 {
   font-size: 32px;
 }
 .nav-services .services-container .service .service-info {
   padding: 18px 0px 32px 0px;
-  border-radius: 40px;
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -587,8 +581,8 @@ form button.submit:hover, form button.submit:focus {
   line-height: 1.4;
   letter-spacing: 2;
 }
-.nav-services .services-container .service:hover .service-icon::before, .nav-services .services-container .service:focus .service-icon::before {
-  border-width: 2px;
+.nav-services .services-container .service:hover img, .nav-services .services-container .service:focus img {
+  filter: brightness(0.4) blur(1px);
 }
 .nav-services .services-container .service:hover p, .nav-services .services-container .service:focus p {
   opacity: 1;
@@ -662,7 +656,6 @@ form button.submit:hover, form button.submit:focus {
 @media (max-width: 600px) {
   header nav ul li a + .active {
     max-height: 450px;
-    bottom: 0 !important;
     top: auto !important;
     flex-wrap: nowrap;
   }
